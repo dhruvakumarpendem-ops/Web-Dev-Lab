@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Pendem Dhruva Kumar — Computer Science student & developer.">
+  <title>Dhruva Kumar — Builder &amp; Developer</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-hover: #1f2937;
+      --border: #1f2937;
+      --border-accent: #374151;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-alpha: rgba(56, 189, 248, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 3rem 1.25rem;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Screen Reader Only Utility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Header & Navigation */
+    header {
+      margin-bottom: 3.5rem;
+    }
+
+    .name-title h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #fff;
+    }
+
+    .name-title p {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-top: 0.2rem;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    /* Section Layout */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    section h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* About Section */
+    .about-bio {
+      font-size: 1.05rem;
+      color: #d1d5db;
+    }
+
+    /* Project Cards */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .project-card:hover {
+      background: var(--card-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-header h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 0.75rem;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.925rem;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Tech Badges */
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .badge-list li {
+      background: var(--accent-alpha);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      font-size: 0.8rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* Timeline / Education */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .timeline-item {
+      padding-left: 1rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .timeline-item time {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      font-style: normal;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="name-title">
+        <h1>Pendem Dhruva Kumar</h1>
+        <p>CSE Student (AI/ML) &amp; Web Developer</p>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#stack">Stack</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- About -->
+      <section id="about">
+        <h2>About</h2>
+        <p class="about-bio">
+          I build full-stack web applications and microservices focused on practical user experiences. Specializing in AI &amp; Machine Learning, I spend my time prototyping apps using Next.js, writing clean interfaces, and shipping fast.
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="projects-list">
+
+          <article class="project-card">
+            <div class="project-header">
+              <h3>Livestock Health Monitor</h3>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <p>Telemetry platform using computer vision for weight estimation and cost-effective feed formulation.</p>
+            <ul class="badge-list">
+              <li>Python</li>
+              <li>Flutter</li>
+              <li>Computer Vision</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <h3>TRACES</h3>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">Demo</a>
+                <a href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <p>Anonymous campus reporting tool designed to route compliance concerns directly to external regulators.</p>
+            <ul class="badge-list">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Vercel</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-header">
+              <h3>Clinical Management System</h3>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <p>Clinical app tailored for patient scheduling workflows and zero-config local testing.</p>
+            <ul class="badge-list">
+              <li>React</li>
+              <li>Prisma</li>
+              <li>SQLite</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Experience & Education -->
+      <section id="experience">
+        <h2>Experience &amp; Education</h2>
+        <div class="timeline">
+          
+          <article class="timeline-item">
+            <h3>B.Tech in Computer Science (AI &amp; ML)</h3>
+            <time datetime="2024/2028">2024 — Present</time>
+            <p>Focusing on algorithmic logic, ML basics, and web architecture systems.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Hackathons &amp; Prototyping</h3>
+            <time datetime="2026">2026</time>
+            <p>Building real-world web apps, telemetry systems, and rapid frontends under team setups.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section id="stack">
+        <h2>Tech Stack</h2>
+        <ul class="badge-list">
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Tailwind CSS</li>
+          <li>Python</li>
+          <li>Flutter</li>
+          <li>Prisma</li>
+          <li>SQLite</li>
+          <li>Git</li>
+          <li>Vercel</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Pendem Dhruva Kumar</p>
+      <address class="social-links">
+        <a href="mailto:dhruva@example.com">Email</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      </address>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens and Typography - P7</title>
+    <style>
+        /* Design Tokens (CSS Custom Properties) */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --bg-color: #f8f9fa;
+            
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-size-base: 16px;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 2rem;
+            
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            font-size: var(--font-size-base);
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            margin: 0;
+            padding: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h1 {
+            font-size: var(--font-size-xl);
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p.subtitle {
+            font-size: var(--font-size-lg);
+            color: #7f8c8d;
+        }
+
+        .card-container {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pendem Dhruva Kumar</h1>
+        <p class="subtitle">Learning Design Tokens and Typography System</p>
+    </header>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <h3>Typography</h3>
+                <p>Using consistent font families, sizes, and line heights defined cleanly in root variables.</p>
+            </div>
+            <div class="card">
+                <h3>Design Tokens</h3>
+                <p>Storing colors, spacing, and font sizes as CSS variables for easy maintenance.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pendem Dhruva Kumar. Web Development Lab P7.</p>
+    </footer>
+
+</body>
+</html>
